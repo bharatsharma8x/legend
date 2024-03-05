@@ -1,0 +1,9 @@
+<h1><%= @legend.name %></h1>
+
+<div class="legend-image">
+  <% if @legend.image.attached? %>
+    <%= image_tag @legend.image, class: "img-fluid" %>
+  <% else %>
+    <p>No image available</p>
+  <% end %>
+</div>

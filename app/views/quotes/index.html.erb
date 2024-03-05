@@ -1,0 +1,11 @@
+<h1>All Quotes</h1>
+
+<%= link_to 'New Quote', new_quote_path, class: 'btn btn-primary mb-3' %>
+
+<% @quotes.each do |quote| %>
+  <div class="quote">
+    <h2><%= quote.title %></h2>
+    <p><strong>Legend:</strong> <%= quote.legend.name %></p>
+    <%= link_to 'Edit', edit_quote_path(quote), class: 'btn btn-secondary' %>
+  </div>
+<% end %>

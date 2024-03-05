@@ -1,0 +1,27 @@
+<%= form_with(model: @legend, url: @legend.persisted? ? legend_path(@legend) : legends_path, method: @legend.persisted? ? :patch : :post, html: { multipart: true }) do |form| %>
+  <% if @legend.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@legend.errors.count, "error") %> prohibited this legend from being saved:</h2>
+
+      <ul>
+      <% @legend.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

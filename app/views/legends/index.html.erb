@@ -1,0 +1,16 @@
+<h1>All Legends</h1>
+
+<%= link_to 'New Legend', new_legend_path, class: 'btn btn-primary mb-3' %>
+
+<% @legends.each do |legend| %>
+  <div class="legend">
+    <h2><%= legend.name %></h2>
+    <% if legend.image.attached? %>
+      <%= image_tag legend.image, class: 'img-fluid' %>
+    <% else %>
+      <p>No image available</p>
+    <% end %>
+
+    <%= link_to 'Edit', edit_legend_path(legend), class: 'btn btn-secondary mt-3' %>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<h1><%= @template.name %></h1>
+
+<div class="template-image">
+  <% if @template.image.attached? %>
+    <%= image_tag @template.image, class: "img-fluid" %>
+  <% else %>
+    <p>No image available</p>
+  <% end %>
+</div>

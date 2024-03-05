@@ -1,0 +1,16 @@
+<h1>All Templates</h1>
+
+<%= link_to 'New Template', new_template_path, class: 'btn btn-primary mb-3' %>
+
+<% @templates.each do |template| %>
+  <div class="template">
+    <h2><%= template.name %></h2>
+    <% if template.image.attached? %>
+      <%= image_tag template.image, class: 'img-fluid' %>
+    <% else %>
+      <p>No image available</p>
+    <% end %>
+
+    <%= link_to 'Edit', edit_template_path(template), class: 'btn btn-secondary mt-3' %>
+  </div>
+<% end %>
